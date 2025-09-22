@@ -188,6 +188,15 @@ The type of it is an array of BlockDeviceConfigInfo, e.g.
         short,
         long,
         value_parser,
+        help = "The path of tdshim image",
+        display_order = 1
+    )]
+    pub tdshim_path: Option<String>,
+
+    #[clap(
+        short,
+        long,
+        value_parser,
         help = "The path of kernel image (Only uncompressed kernel is supported for Dragonball)",
         display_order = 1
     )]
