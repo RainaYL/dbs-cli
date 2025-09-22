@@ -101,6 +101,7 @@ impl CliInstance {
             // we need a special token to enable the stdio console.
             serial_path: serial_path.clone(),
             pci_hotplug_enabled: args.host_device.pci_hotplug_enabled,
+            tdx_enabled: args.tdx.tdx_enabled,
         };
 
         if let Some(com1_sock_path) = serial_path {
@@ -115,7 +116,7 @@ impl CliInstance {
         // boot source
         let boot_source_config = BootSourceConfig {
             // unwrap is safe because we have checked kernel_path in the beginning of run_vmm_server
-            tdshim_image_path: args.tdshim_path,
+            tdshim_image_path: args.tdx.tdshim_path,
             kernel_path: args.kernel_path.unwrap(),
             initrd_path: args.initrd_path.clone(),
             boot_args: Some(args.boot_args.clone()),

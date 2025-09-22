@@ -188,15 +188,6 @@ The type of it is an array of BlockDeviceConfigInfo, e.g.
         short,
         long,
         value_parser,
-        help = "The path of tdshim image",
-        display_order = 1
-    )]
-    pub tdshim_path: Option<String>,
-
-    #[clap(
-        short,
-        long,
-        value_parser,
         help = "The path of kernel image (Only uncompressed kernel is supported for Dragonball)",
         display_order = 1
     )]
@@ -225,6 +216,10 @@ The type of it is an array of BlockDeviceConfigInfo, e.g.
     /// rootfs
     #[clap(flatten)]
     pub rootfs_args: RootfsArgs,
+
+    /// tdx
+    #[clap(flatten)]
+    pub tdx: TdxArgs,
 }
 
 #[derive(Args, Debug, Serialize, Deserialize, Clone)]
@@ -317,6 +312,27 @@ pub struct HostDeviceArgs {
     pub guest_dev_id: Option<u8>,
     #[clap(long, value_parser, help = "clique_id", display_order = 2)]
     pub clique_id: Option<u8>,
+}
+
+#[derive(Args, Debug, Serialize, Deserialize, Clone)]
+pub struct TdxArgs {
+    #[clap(
+        long,
+        value_parser,
+        help = "whether TDX is enabled or not",
+        default_value_t = false,
+        display_order = 2
+    )]
+    pub tdx_enabled: bool,
+
+    #[clap(
+        short,
+        long,
+        value_parser,
+        help = "The path of tdshim image",
+        display_order = 2
+    )]
+    pub tdshim_path: Option<String>,
 }
 
 #[derive(Args, Debug, Serialize, Deserialize, Clone)]

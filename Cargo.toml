@@ -15,7 +15,8 @@ dragonball = { git = "https://github.com/RainaYL/kata-containers", branch = "cho
     "hotplug",
     "dbs-upcall",
     "vhost-user-net",
-    "host-device"
+    "host-device",
+    "tdx"
 ] }
 clap = { version = "4.0.27", features = ["derive"] }
 serde = "1.0.27"
