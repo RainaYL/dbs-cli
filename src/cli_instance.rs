@@ -115,6 +115,7 @@ impl CliInstance {
         // boot source
         let boot_source_config = BootSourceConfig {
             // unwrap is safe because we have checked kernel_path in the beginning of run_vmm_server
+            tdshim_image_path: None,
             kernel_path: args.kernel_path.unwrap(),
             initrd_path: args.initrd_path.clone(),
             boot_args: Some(args.boot_args.clone()),

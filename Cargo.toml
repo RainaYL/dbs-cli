@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-dragonball = { git = "https://github.com/RainaYL/kata-containers", branch = "main", features = [
+dragonball = { git = "https://github.com/RainaYL/kata-containers", branch = "chonglan/tdx_enable", features = [
     "virtio-blk",
     "virtio-fs",
     "virtio-vsock",
