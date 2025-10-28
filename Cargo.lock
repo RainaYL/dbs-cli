@@ -343,7 +343,7 @@ dependencies = [
 [[package]]
 name = "dbs-address-space"
 version = "0.3.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable#a0c2ab8c27b243acd73d5795b2f15fb27591ad96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable_2#c0a1853ffbfd90e9b532ee3305f3ee32e8de6064"
 dependencies = [
  "arc-swap",
  "lazy_static",
@@ -357,7 +357,7 @@ dependencies = [
 [[package]]
 name = "dbs-allocator"
 version = "0.1.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable#a0c2ab8c27b243acd73d5795b2f15fb27591ad96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable_2#c0a1853ffbfd90e9b532ee3305f3ee32e8de6064"
 dependencies = [
  "thiserror 1.0.69",
 ]
@@ -365,7 +365,7 @@ dependencies = [
 [[package]]
 name = "dbs-arch"
 version = "0.2.3"
-source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable#a0c2ab8c27b243acd73d5795b2f15fb27591ad96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable_2#c0a1853ffbfd90e9b532ee3305f3ee32e8de6064"
 dependencies = [
  "kvm-bindings",
  "kvm-ioctls",
@@ -379,7 +379,7 @@ dependencies = [
 [[package]]
 name = "dbs-boot"
 version = "0.4.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable#a0c2ab8c27b243acd73d5795b2f15fb27591ad96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable_2#c0a1853ffbfd90e9b532ee3305f3ee32e8de6064"
 dependencies = [
  "dbs-arch",
  "kvm-bindings",
@@ -420,7 +420,7 @@ dependencies = [
 [[package]]
 name = "dbs-device"
 version = "0.2.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable#a0c2ab8c27b243acd73d5795b2f15fb27591ad96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable_2#c0a1853ffbfd90e9b532ee3305f3ee32e8de6064"
 dependencies = [
  "thiserror 1.0.69",
 ]
@@ -428,7 +428,7 @@ dependencies = [
 [[package]]
 name = "dbs-interrupt"
 version = "0.2.2"
-source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable#a0c2ab8c27b243acd73d5795b2f15fb27591ad96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable_2#c0a1853ffbfd90e9b532ee3305f3ee32e8de6064"
 dependencies = [
  "dbs-arch",
  "dbs-device",
@@ -441,7 +441,7 @@ dependencies = [
 [[package]]
 name = "dbs-legacy-devices"
 version = "0.1.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable#a0c2ab8c27b243acd73d5795b2f15fb27591ad96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable_2#c0a1853ffbfd90e9b532ee3305f3ee32e8de6064"
 dependencies = [
  "dbs-device",
  "dbs-utils",
@@ -455,7 +455,7 @@ dependencies = [
 [[package]]
 name = "dbs-pci"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable#a0c2ab8c27b243acd73d5795b2f15fb27591ad96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable_2#c0a1853ffbfd90e9b532ee3305f3ee32e8de6064"
 dependencies = [
  "byteorder",
  "dbs-address-space",
@@ -480,9 +480,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "dbs-tdx"
+version = "0.1.0"
+source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable_2#c0a1853ffbfd90e9b532ee3305f3ee32e8de6064"
+dependencies = [
+ "kvm-bindings",
+ "kvm-ioctls",
+ "thiserror 1.0.69",
+ "vm-memory",
+ "vmm-sys-util",
+]
+
+[[package]]
 name = "dbs-upcall"
 version = "0.3.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable#a0c2ab8c27b243acd73d5795b2f15fb27591ad96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable_2#c0a1853ffbfd90e9b532ee3305f3ee32e8de6064"
 dependencies = [
  "anyhow",
  "dbs-utils",
@@ -495,7 +507,7 @@ dependencies = [
 [[package]]
 name = "dbs-utils"
 version = "0.2.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable#a0c2ab8c27b243acd73d5795b2f15fb27591ad96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable_2#c0a1853ffbfd90e9b532ee3305f3ee32e8de6064"
 dependencies = [
  "anyhow",
  "event-manager",
@@ -510,7 +522,7 @@ dependencies = [
 [[package]]
 name = "dbs-virtio-devices"
 version = "0.3.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable#a0c2ab8c27b243acd73d5795b2f15fb27591ad96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable_2#c0a1853ffbfd90e9b532ee3305f3ee32e8de6064"
 dependencies = [
  "byteorder",
  "caps",
@@ -595,7 +607,7 @@ checksum = "75b325c5dbd37f80359721ad39aca5a29fb04c89279657cffdda8736d0c0b9d2"
 [[package]]
 name = "dragonball"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable#a0c2ab8c27b243acd73d5795b2f15fb27591ad96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=chonglan%2Ftdx_enable_2#c0a1853ffbfd90e9b532ee3305f3ee32e8de6064"
 dependencies = [
  "anyhow",
  "arc-swap",
@@ -609,6 +621,7 @@ dependencies = [
  "dbs-interrupt",
  "dbs-legacy-devices",
  "dbs-pci",
+ "dbs-tdx",
  "dbs-upcall",
  "dbs-utils",
  "dbs-virtio-devices",

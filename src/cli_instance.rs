@@ -52,10 +52,11 @@ impl VMMComm for CliInstance {
     }
 }
 impl CliInstance {
-    pub fn new(id: &str) -> Self {
+    pub fn new(id: &str, tdx_enabled: bool) -> Self {
         let vmm_shared_info = Arc::new(RwLock::new(InstanceInfo::new(
             String::from(id),
             DRAGONBALL_VERSION.to_string(),
+            tdx_enabled,
         )));
 
         let to_vmm_fd = EventFd::new(libc::EFD_NONBLOCK)
@@ -101,7 +102,6 @@ impl CliInstance {
             // we need a special token to enable the stdio console.
             serial_path: serial_path.clone(),
             pci_hotplug_enabled: args.host_device.pci_hotplug_enabled,
-            tdx_enabled: args.tdx.tdx_enabled,
         };
 
         if let Some(com1_sock_path) = serial_path {

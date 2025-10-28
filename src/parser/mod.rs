@@ -22,7 +22,7 @@ pub mod args;
 const KVM_DEVICE: &str = "/dev/kvm";
 
 pub fn run_with_cli(create_args: CreateArgs, api_sock_path: &String) -> Result<i32> {
-    let mut cli_instance = CliInstance::new("dbs-cli");
+    let mut cli_instance = CliInstance::new("dbs-cli", create_args.tdx.tdx_enabled);
 
     let kvm = OpenOptions::new().read(true).write(true).open(KVM_DEVICE)?;
 
