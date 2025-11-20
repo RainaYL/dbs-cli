@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-dragonball = { git = "https://github.com/RainaYL/kata-containers", branch = "chonglan/tdx_enable_2", features = [
+dragonball = { git = "https://github.com/RainaYL/kata-containers", branch = "chonglan/tdx_support_pr_dup", features = [
     "virtio-blk",
     "virtio-fs",
     "virtio-vsock",
@@ -19,21 +19,21 @@ dragonball = { git = "https://github.com/RainaYL/kata-containers", branch = "cho
     "tdx"
 ] }
 clap = { version = "4.0.27", features = ["derive"] }
-serde = "1.0.27"
-serde_derive = "1.0.27"
-libc = "0.2.39"
-seccompiler = "0.2.0"
-log = "0.4.14"
+serde = "1.0.188"
+serde_derive = "1.0.188"
+libc = "0.2.172"
+seccompiler = "0.5.0"
+log = "0.4.27"
 kvm-bindings = "0.6.0"
-kvm-ioctls = "0.12.0"
+kvm-ioctls = "0.12.1"
 thiserror = "1"
-nix = "0.24.1"
-anyhow = "1.0.61"
-vmm-sys-util = "0.11.0"
+nix = "0.24.3"
+anyhow = "1.0.75"
+vmm-sys-util = "0.11.1"
 slog = "2.7.0"
-slog-term = "2.9.0"
+slog-term = "2.9.1"
 slog-json = "2.6.1"
 slog-scope = "4.4.0"
 slog-stdlog = "4.1.1"
-serde_json = "1.0.89"
-crossbeam-channel = "0.5.8"
+serde_json = "1.0.106"
+crossbeam-channel = "0.5.15"
