@@ -142,7 +142,18 @@ impl CliInstance {
             .expect("failed to set boot source");
 
         // set rootfs
-        self.insert_block_device(block_device_config_info)
+        self.insert_block_device(block_device_config_info.clone())
+            .expect("failed to set block device");
+
+        block_device_config_info = BlockDeviceConfigInfo {
+            drive_id: String::from("extrafs"),
+            // unwrap is safe because we have checked rootfs path in the beginning of run_vmm_server
+            path_on_host: PathBuf::from("/tmp/test_resources/hello-rootfs-1.ext4"),
+            is_root_device: false,
+            is_read_only: false,
+            ..block_device_config_info
+        };
+        self.insert_block_device(block_device_config_info.clone())
             .expect("failed to set block device");
 
         if !args.vsock.is_empty() {
