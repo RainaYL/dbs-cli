@@ -38,11 +38,14 @@ pub fn run_with_cli(create_args: CreateArgs, api_sock_path: &String) -> Result<i
         .to_vmm_fd
         .try_clone()
         .expect("Failed to dup eventfd");
+    let mut seccomp_filters = HashMap::new();
+    seccomp_filters.insert(String::from("all"), cli_instance.seccomp.clone());
+    seccomp_filters.insert(String::from("vmm"), cli_instance.seccomp.clone());
+    seccomp_filters.insert(String::from("vcpu"), cli_instance.seccomp.clone());
     let vmm = Vmm::new(
         cli_instance.vmm_shared_info.clone(),
         api_event_fd2,
-        cli_instance.seccomp.clone(),
-        cli_instance.seccomp.clone(),
+        seccomp_filters,
         Some(kvm.into_raw_fd()),
     )
     .expect("Failed to start vmm");
