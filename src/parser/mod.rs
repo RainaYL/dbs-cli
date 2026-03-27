@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 use std::{
+    collections::HashMap,
     fs::OpenOptions,
     os::unix::io::IntoRawFd,
     sync::{Arc, Mutex},
