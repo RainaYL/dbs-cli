@@ -101,6 +101,7 @@ impl CliInstance {
             // we need a special token to enable the stdio console.
             serial_path: serial_path.clone(),
             pci_hotplug_enabled: args.host_device.pci_hotplug_enabled,
+            split_irqchip: false,
         };
 
         if let Some(com1_sock_path) = serial_path {
