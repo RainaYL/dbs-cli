@@ -609,7 +609,7 @@ dependencies = [
 [[package]]
 name = "dbs-address-space"
 version = "0.3.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "arc-swap",
  "lazy_static",
@@ -623,7 +623,7 @@ dependencies = [
 [[package]]
 name = "dbs-allocator"
 version = "0.1.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "thiserror 1.0.69",
 ]
@@ -631,7 +631,7 @@ dependencies = [
 [[package]]
 name = "dbs-arch"
 version = "0.2.3"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "kvm-bindings",
  "kvm-ioctls",
@@ -645,7 +645,7 @@ dependencies = [
 [[package]]
 name = "dbs-boot"
 version = "0.4.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "dbs-arch",
  "kvm-bindings",
@@ -686,7 +686,7 @@ dependencies = [
 [[package]]
 name = "dbs-device"
 version = "0.2.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "thiserror 1.0.69",
 ]
@@ -694,7 +694,7 @@ dependencies = [
 [[package]]
 name = "dbs-interrupt"
 version = "0.2.2"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "bilge",
  "dbs-arch",
@@ -708,7 +708,7 @@ dependencies = [
 [[package]]
 name = "dbs-legacy-devices"
 version = "0.1.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "dbs-device",
  "dbs-utils",
@@ -722,7 +722,7 @@ dependencies = [
 [[package]]
 name = "dbs-pci"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "byteorder",
  "dbs-address-space",
@@ -747,7 +747,7 @@ dependencies = [
 [[package]]
 name = "dbs-upcall"
 version = "0.3.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "dbs-utils",
  "dbs-virtio-devices",
@@ -759,7 +759,7 @@ dependencies = [
 [[package]]
 name = "dbs-utils"
 version = "0.2.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "anyhow",
  "event-manager",
@@ -774,7 +774,7 @@ dependencies = [
 [[package]]
 name = "dbs-virtio-devices"
 version = "0.3.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "byteorder",
  "caps",
@@ -891,7 +891,7 @@ checksum = "1435fa1053d8b2fbbe9be7e97eca7f33d37b28409959813daefc1446a14247f1"
 [[package]]
 name = "dragonball"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "anyhow",
  "arc-swap",
@@ -1671,7 +1671,7 @@ dependencies = [
 [[package]]
 name = "kata-sys-util"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "anyhow",
  "byteorder",
@@ -1697,7 +1697,7 @@ dependencies = [
 [[package]]
 name = "kata-types"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "anyhow",
  "base64 0.13.1",
@@ -2802,7 +2802,7 @@ dependencies = [
 [[package]]
 name = "runtime-spec"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#8ec176f885c787816b7c5b64be48ef20ce0d7e96"
+source = "git+https://github.com/RainaYL/kata-containers?branch=split_irqchip_test#3285c33f1594213e8bfa7133d16c3492bacdccca"
 dependencies = [
  "serde",
  "serde_derive",

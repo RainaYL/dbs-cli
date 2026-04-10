@@ -130,6 +130,7 @@ impl CliInstance {
             path_on_host: PathBuf::from(&args.rootfs_args.rootfs.unwrap()),
             is_root_device: args.rootfs_args.is_root,
             is_read_only: args.rootfs_args.is_read_only,
+            use_generic_irq: Some(false),
             ..block_device_config_info
         };
 
