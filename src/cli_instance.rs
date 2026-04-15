@@ -56,7 +56,8 @@ impl CliInstance {
         let vmm_shared_info = Arc::new(RwLock::new(InstanceInfo::new(
             String::from(id),
             DRAGONBALL_VERSION.to_string(),
-            ConfidentialVmType::TDX,
+            // Some(ConfidentialVmType::TDX),
+            None,
         )));
 
         let to_vmm_fd = EventFd::new(libc::EFD_NONBLOCK)
@@ -102,7 +103,6 @@ impl CliInstance {
             // we need a special token to enable the stdio console.
             serial_path: serial_path.clone(),
             pci_hotplug_enabled: args.host_device.pci_hotplug_enabled,
-            split_irqchip: false,
         };
 
         if let Some(com1_sock_path) = serial_path {
