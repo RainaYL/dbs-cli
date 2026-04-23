@@ -120,7 +120,7 @@ impl CliInstance {
             kernel_path: args.kernel_path.unwrap(),
             initrd_path: args.initrd_path.clone(),
             boot_args: Some(args.boot_args.clone()),
-            firmware_path: None,
+            firmware_path: Some(String::from("~/src/test_resources/tdshim.bin")),
         };
 
         // rootfs
