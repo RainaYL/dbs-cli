@@ -94,6 +94,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7f202df86484c868dbad7eaa557ef785d5c66295e41b460ef922eca0723b842c"
 
 [[package]]
+name = "arbitrary-int"
+version = "2.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "993a810118f8f37e9c4411c86f1c4c940a09a7ab34b7bf2d88d06f50c553fab7"
+
+[[package]]
 name = "arc-swap"
 version = "1.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -143,6 +149,29 @@ name = "base64"
 version = "0.22.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "72b3254f16251a8381aa12e40e3c4d2f0199f8c6508fbecb9d91f575e0fbb8c6"
+
+[[package]]
+name = "bilge"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "279c74986684d5cc7bbbd079aa448e8f852992cd385d85bb3a37e374c087b065"
+dependencies = [
+ "arbitrary-int",
+ "bilge-impl",
+]
+
+[[package]]
+name = "bilge-impl"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a1176e49f42fe135cd2b56465e4f7d07038d3728f5e9f27fb2f08ed3fef75339"
+dependencies = [
+ "itertools",
+ "proc-macro-error2",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.117",
+]
 
 [[package]]
 name = "bitflags"
@@ -510,16 +539,6 @@ dependencies = [
 
 [[package]]
 name = "darling"
-version = "0.14.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7b750cb3417fd1b327431a470f388520309479ab0bf5e323505daf0290cd3850"
-dependencies = [
- "darling_core 0.14.4",
- "darling_macro 0.14.4",
-]
-
-[[package]]
-name = "darling"
 version = "0.20.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fc7f46116c46ff9ab3eb1597a45688b6715c6e628b5c133e288e709a29bcb4ee"
@@ -529,16 +548,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "darling_core"
-version = "0.14.4"
+name = "darling"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "109c1ca6e6b7f82cc233a97004ea8ed7ca123a9af07a8230878fcfda9b158bf0"
+checksum = "25ae13da2f202d56bd7f91c25fba009e7717a1e4a1cc98a76d844b65ae912e9d"
 dependencies = [
- "fnv",
- "ident_case",
- "proc-macro2",
- "quote",
- "syn 1.0.109",
+ "darling_core 0.23.0",
+ "darling_macro 0.23.0",
 ]
 
 [[package]]
@@ -556,14 +572,15 @@ dependencies = [
 ]
 
 [[package]]
-name = "darling_macro"
-version = "0.14.4"
+name = "darling_core"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a4aab4dbc9f7611d8b55048a3a16d2d010c2c8334e46304b40ac1cc14bf3b48e"
+checksum = "9865a50f7c335f53564bb694ef660825eb8610e0a53d3e11bf1b0d3df31e03b0"
 dependencies = [
- "darling_core 0.14.4",
+ "ident_case",
+ "proc-macro2",
  "quote",
- "syn 1.0.109",
+ "syn 2.0.117",
 ]
 
 [[package]]
@@ -578,9 +595,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "darling_macro"
+version = "0.23.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ac3984ec7bd6cfa798e62b4a642426a5be0e68f9401cfc2a01e3fa9ea2fcdb8d"
+dependencies = [
+ "darling_core 0.23.0",
+ "quote",
+ "syn 2.0.117",
+]
+
+[[package]]
 name = "dbs-acpi"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "vm-memory 0.17.1",
 ]
@@ -588,7 +616,7 @@ dependencies = [
 [[package]]
 name = "dbs-address-space"
 version = "0.3.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "arc-swap",
  "lazy_static",
@@ -602,7 +630,7 @@ dependencies = [
 [[package]]
 name = "dbs-allocator"
 version = "0.1.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "thiserror 1.0.69",
 ]
@@ -610,7 +638,7 @@ dependencies = [
 [[package]]
 name = "dbs-arch"
 version = "0.2.3"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "kvm-bindings",
  "kvm-ioctls",
@@ -624,7 +652,7 @@ dependencies = [
 [[package]]
 name = "dbs-boot"
 version = "0.4.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "dbs-arch",
  "kvm-bindings",
@@ -665,7 +693,7 @@ dependencies = [
 [[package]]
 name = "dbs-device"
 version = "0.2.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "thiserror 1.0.69",
 ]
@@ -673,8 +701,9 @@ dependencies = [
 [[package]]
 name = "dbs-interrupt"
 version = "0.2.2"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
+ "bilge",
  "dbs-arch",
  "dbs-device",
  "kvm-bindings",
@@ -686,7 +715,7 @@ dependencies = [
 [[package]]
 name = "dbs-legacy-devices"
 version = "0.1.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "dbs-device",
  "dbs-utils",
@@ -700,7 +729,7 @@ dependencies = [
 [[package]]
 name = "dbs-pci"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "byteorder",
  "dbs-address-space",
@@ -725,7 +754,7 @@ dependencies = [
 [[package]]
 name = "dbs-upcall"
 version = "0.3.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "dbs-utils",
  "dbs-virtio-devices",
@@ -737,7 +766,7 @@ dependencies = [
 [[package]]
 name = "dbs-utils"
 version = "0.2.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "anyhow",
  "event-manager",
@@ -752,7 +781,7 @@ dependencies = [
 [[package]]
 name = "dbs-virtio-devices"
 version = "0.3.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "byteorder",
  "caps",
@@ -869,7 +898,7 @@ checksum = "1435fa1053d8b2fbbe9be7e97eca7f33d37b28409959813daefc1446a14247f1"
 [[package]]
 name = "dragonball"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "anyhow",
  "arc-swap",
@@ -918,6 +947,12 @@ name = "dyn-clone"
 version = "1.0.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d0881ea181b1df73ff77ffaaf9c7544ecc11e82fba9b5f27b262a3c73a332555"
+
+[[package]]
+name = "either"
+version = "1.15.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "48c757948c5ede0e46177b7add2e67155f70e33c07fea8284df6576da70b3719"
 
 [[package]]
 name = "encoding_rs"
@@ -1607,6 +1642,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a6cb138bb79a146c1bd460005623e142ef0181e3d0219cb493e02f7d08a35695"
 
 [[package]]
+name = "itertools"
+version = "0.14.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2b192c782037fadd9cfa75548310488aabdbf3d2da73885b31bd0abd03351285"
+dependencies = [
+ "either",
+]
+
+[[package]]
 name = "itoa"
 version = "1.0.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1635,7 +1679,7 @@ dependencies = [
 [[package]]
 name = "kata-sys-util"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "anyhow",
  "byteorder",
@@ -1648,7 +1692,7 @@ dependencies = [
  "nix 0.26.4",
  "oci-spec",
  "pci-ids",
- "rand 0.8.5",
+ "rand 0.10.1",
  "runtime-spec",
  "serde",
  "serde_json",
@@ -1661,7 +1705,7 @@ dependencies = [
 [[package]]
 name = "kata-types"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "anyhow",
  "base64 0.13.1",
@@ -2559,9 +2603,9 @@ dependencies = [
 
 [[package]]
 name = "rand"
-version = "0.10.0"
+version = "0.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bc266eb313df6c5c09c1c7b1fbe2510961e5bcd3add930c1e31f7ed9da0feff8"
+checksum = "d2e8e8bcc7961af1fdac401278c6a831614941f6164ee3bf4ce61b7edb162207"
 dependencies = [
  "chacha20",
  "getrandom 0.4.2",
@@ -2766,7 +2810,7 @@ dependencies = [
 [[package]]
 name = "runtime-spec"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_draft#1e8dd3691a9d3a8ab21bfd9a1c2b70fe0505ac77"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdshim_pr#3bc29eb1f38a584cf86d3a50d83497b18637429e"
 dependencies = [
  "serde",
  "serde_derive",
@@ -2961,26 +3005,26 @@ dependencies = [
 
 [[package]]
 name = "serde-attributes"
-version = "0.2.1"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6eb8ec7724e4e524b2492b510e66957fe1a2c76c26a6975ec80823f2439da685"
+checksum = "a57f1caf4b79918ded05d624e4da4d85201c38b6ad5bbcec5b0a5fca5aabe0cb"
 dependencies = [
- "darling_core 0.14.4",
+ "darling_core 0.23.0",
  "serde-rename-rule",
- "syn 1.0.109",
+ "syn 2.0.117",
 ]
 
 [[package]]
 name = "serde-enum-str"
-version = "0.4.0"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "26416dc95fcd46b0e4b12a3758043a229a6914050aaec2e8191949753ed4e9aa"
+checksum = "548ed7cf39ded10383d58de438d120c2b019cf882d0d7e99a7500724090200bf"
 dependencies = [
- "darling 0.14.4",
+ "darling 0.23.0",
  "proc-macro2",
  "quote",
  "serde-attributes",
- "syn 1.0.109",
+ "syn 2.0.117",
 ]
 
 [[package]]
@@ -3322,7 +3366,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "32497e9a4c7b38532efcdebeef879707aa9f794296a4f0244f6f69e9bc8574bd"
 dependencies = [
  "fastrand",
- "getrandom 0.4.2",
+ "getrandom 0.3.4",
  "once_cell",
  "rustix 1.1.4",
  "windows-sys 0.61.2",
@@ -3702,13 +3746,13 @@ checksum = "06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821"
 
 [[package]]
 name = "uuid"
-version = "1.23.0"
+version = "1.22.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5ac8b6f42ead25368cf5b098aeb3dc8a1a2c05a3eee8a9a1a68c640edbfc79d9"
+checksum = "a68d3c8f01c0cfa54a75291d83601161799e4a89a39e0929f4b0354d88757a37"
 dependencies = [
  "getrandom 0.4.2",
  "js-sys",
- "rand 0.10.0",
+ "rand 0.10.1",
  "wasm-bindgen",
 ]
 
