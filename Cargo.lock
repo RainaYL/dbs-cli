@@ -608,7 +608,7 @@ dependencies = [
 [[package]]
 name = "dbs-acpi"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "vm-memory",
 ]
@@ -616,7 +616,7 @@ dependencies = [
 [[package]]
 name = "dbs-address-space"
 version = "0.3.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "arc-swap",
  "lazy_static",
@@ -630,7 +630,7 @@ dependencies = [
 [[package]]
 name = "dbs-allocator"
 version = "0.1.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "thiserror 1.0.69",
 ]
@@ -638,7 +638,7 @@ dependencies = [
 [[package]]
 name = "dbs-arch"
 version = "0.2.3"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "kvm-bindings",
  "kvm-ioctls",
@@ -652,7 +652,7 @@ dependencies = [
 [[package]]
 name = "dbs-boot"
 version = "0.4.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "dbs-arch",
  "kvm-bindings",
@@ -693,7 +693,7 @@ dependencies = [
 [[package]]
 name = "dbs-device"
 version = "0.2.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "thiserror 1.0.69",
 ]
@@ -701,7 +701,7 @@ dependencies = [
 [[package]]
 name = "dbs-interrupt"
 version = "0.2.2"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "bilge",
  "dbs-arch",
@@ -715,7 +715,7 @@ dependencies = [
 [[package]]
 name = "dbs-legacy-devices"
 version = "0.1.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "dbs-device",
  "dbs-utils",
@@ -729,7 +729,7 @@ dependencies = [
 [[package]]
 name = "dbs-pci"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "byteorder",
  "dbs-address-space",
@@ -754,7 +754,7 @@ dependencies = [
 [[package]]
 name = "dbs-upcall"
 version = "0.3.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "dbs-utils",
  "dbs-virtio-devices",
@@ -766,7 +766,7 @@ dependencies = [
 [[package]]
 name = "dbs-utils"
 version = "0.2.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "anyhow",
  "event-manager",
@@ -781,7 +781,7 @@ dependencies = [
 [[package]]
 name = "dbs-virtio-devices"
 version = "0.3.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "byteorder",
  "caps",
@@ -892,7 +892,7 @@ dependencies = [
 [[package]]
 name = "dragonball"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "anyhow",
  "arc-swap",
@@ -1686,7 +1686,7 @@ dependencies = [
 [[package]]
 name = "kata-sys-util"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "anyhow",
  "byteorder",
@@ -1711,7 +1711,7 @@ dependencies = [
 [[package]]
 name = "kata-types"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "anyhow",
  "base64 0.13.1",
@@ -2767,7 +2767,7 @@ dependencies = [
 [[package]]
 name = "runtime-spec"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Ftdx_quote_draft#e880a71165844c047fe72781cd6cf8f30c04f3a9"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#b572a8bc9603263c2d0ac00cb6c783f6d784e4b4"
 dependencies = [
  "serde",
  "serde_derive",
