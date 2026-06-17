@@ -56,8 +56,8 @@ impl CliInstance {
         let vmm_shared_info = Arc::new(RwLock::new(InstanceInfo::new(
             String::from(id),
             DRAGONBALL_VERSION.to_string(),
-            // Some(ConfidentialVmType::TDX),
-            None,
+            Some(ConfidentialVmType::TDX),
+            // None,
         )));
 
         let to_vmm_fd = EventFd::new(libc::EFD_NONBLOCK)
@@ -120,8 +120,8 @@ impl CliInstance {
             kernel_path: args.kernel_path.unwrap(),
             initrd_path: args.initrd_path.clone(),
             boot_args: Some(args.boot_args.clone()),
-            // firmware_path: Some(String::from("/home/xiaofan/src/test_resources/tdshim-largepayload.bin")),
-            firmware_path: None,
+            firmware_path: Some(String::from("/home/xiaofan/src/test_resources/tdshim-largepayload.bin")),
+            // firmware_path: None,
         };
 
         // rootfs
