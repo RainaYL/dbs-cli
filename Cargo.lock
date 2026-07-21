@@ -608,7 +608,7 @@ dependencies = [
 [[package]]
 name = "dbs-acpi"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "vm-memory",
 ]
@@ -616,7 +616,7 @@ dependencies = [
 [[package]]
 name = "dbs-address-space"
 version = "0.3.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "arc-swap",
  "lazy_static",
@@ -630,7 +630,7 @@ dependencies = [
 [[package]]
 name = "dbs-allocator"
 version = "0.1.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "thiserror 1.0.69",
 ]
@@ -638,10 +638,10 @@ dependencies = [
 [[package]]
 name = "dbs-arch"
 version = "0.2.3"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
- "kvm-bindings",
- "kvm-ioctls",
+ "kvm-bindings 0.14.1",
+ "kvm-ioctls 0.25.0",
  "libc",
  "memoffset 0.6.5",
  "thiserror 1.0.69",
@@ -652,11 +652,11 @@ dependencies = [
 [[package]]
 name = "dbs-boot"
 version = "0.4.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "dbs-arch",
- "kvm-bindings",
- "kvm-ioctls",
+ "kvm-bindings 0.14.1",
+ "kvm-ioctls 0.25.0",
  "lazy_static",
  "libc",
  "thiserror 1.0.69",
@@ -672,8 +672,8 @@ dependencies = [
  "clap",
  "crossbeam-channel",
  "dragonball",
- "kvm-bindings",
- "kvm-ioctls",
+ "kvm-bindings 0.14.0",
+ "kvm-ioctls 0.24.0",
  "libc",
  "log",
  "nix 0.31.2",
@@ -693,7 +693,7 @@ dependencies = [
 [[package]]
 name = "dbs-device"
 version = "0.2.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "thiserror 1.0.69",
 ]
@@ -701,13 +701,13 @@ dependencies = [
 [[package]]
 name = "dbs-interrupt"
 version = "0.2.2"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "bilge",
  "dbs-arch",
  "dbs-device",
- "kvm-bindings",
- "kvm-ioctls",
+ "kvm-bindings 0.14.1",
+ "kvm-ioctls 0.25.0",
  "libc",
  "log",
  "vmm-sys-util",
@@ -716,12 +716,12 @@ dependencies = [
 [[package]]
 name = "dbs-legacy-devices"
 version = "0.1.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "dbs-device",
  "dbs-interrupt",
  "dbs-utils",
- "kvm-ioctls",
+ "kvm-ioctls 0.25.0",
  "libc",
  "log",
  "serde",
@@ -732,7 +732,7 @@ dependencies = [
 [[package]]
 name = "dbs-pci"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "byteorder",
  "dbs-address-space",
@@ -742,8 +742,8 @@ dependencies = [
  "dbs-interrupt",
  "dbs-utils",
  "dbs-virtio-devices",
- "kvm-bindings",
- "kvm-ioctls",
+ "kvm-bindings 0.14.1",
+ "kvm-ioctls 0.25.0",
  "libc",
  "log",
  "serde",
@@ -757,7 +757,7 @@ dependencies = [
 [[package]]
 name = "dbs-upcall"
 version = "0.3.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "dbs-utils",
  "dbs-virtio-devices",
@@ -769,7 +769,7 @@ dependencies = [
 [[package]]
 name = "dbs-utils"
 version = "0.2.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "anyhow",
  "event-manager",
@@ -784,7 +784,7 @@ dependencies = [
 [[package]]
 name = "dbs-virtio-devices"
 version = "0.3.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "byteorder",
  "caps",
@@ -797,8 +797,8 @@ dependencies = [
  "fuse-backend-rs",
  "io-uring",
  "kata-sys-util",
- "kvm-bindings",
- "kvm-ioctls",
+ "kvm-bindings 0.14.1",
+ "kvm-ioctls 0.25.0",
  "libc",
  "log",
  "nix 0.24.3",
@@ -895,7 +895,7 @@ dependencies = [
 [[package]]
 name = "dragonball"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "anyhow",
  "arc-swap",
@@ -915,8 +915,8 @@ dependencies = [
  "dbs-virtio-devices",
  "derivative",
  "kata-sys-util",
- "kvm-bindings",
- "kvm-ioctls",
+ "kvm-bindings 0.14.1",
+ "kvm-ioctls 0.25.0",
  "lazy_static",
  "libc",
  "linux-loader",
@@ -1689,7 +1689,7 @@ dependencies = [
 [[package]]
 name = "kata-sys-util"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "anyhow",
  "byteorder",
@@ -1714,7 +1714,7 @@ dependencies = [
 [[package]]
 name = "kata-types"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "anyhow",
  "base64 0.13.1",
@@ -1752,13 +1752,32 @@ dependencies = [
 ]
 
 [[package]]
+name = "kvm-bindings"
+version = "0.14.1"
+source = "git+https://github.com/RainaYL/kvm?branch=tdx-v2#4bc315f44c5e8204f5ac75abe5891f4b5b601a84"
+dependencies = [
+ "vmm-sys-util",
+]
+
+[[package]]
 name = "kvm-ioctls"
 version = "0.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "333f77a20344a448f3f70664918135fddeb804e938f28a99d685bd92926e0b19"
 dependencies = [
  "bitflags 2.11.0",
- "kvm-bindings",
+ "kvm-bindings 0.14.0",
+ "libc",
+ "vmm-sys-util",
+]
+
+[[package]]
+name = "kvm-ioctls"
+version = "0.25.0"
+source = "git+https://github.com/RainaYL/kvm?branch=tdx-v2#4bc315f44c5e8204f5ac75abe5891f4b5b601a84"
+dependencies = [
+ "bitflags 2.11.0",
+ "kvm-bindings 0.14.1",
  "libc",
  "vmm-sys-util",
 ]
@@ -2770,7 +2789,7 @@ dependencies = [
 [[package]]
 name = "runtime-spec"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fdeploy_test#a50ce8885b34cc7d14565166360d0e548fc7b29a"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#1ba3911d363728b4b87fab46343c1871ef4f2b58"
 dependencies = [
  "serde",
  "serde_derive",
@@ -3328,13 +3347,12 @@ dependencies = [
 [[package]]
 name = "tdx"
 version = "0.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "83943e37cf46979f711ad11489c641fa058fd0fae92c122d1fc26a664e82acab"
+source = "git+https://github.com/RainaYL/tdx#133b26599c7a6b43eb30d07785e97ad78b4007eb"
 dependencies = [
  "bitflags 2.11.0",
  "iocuddle",
- "kvm-bindings",
- "kvm-ioctls",
+ "kvm-bindings 0.14.1",
+ "kvm-ioctls 0.25.0",
  "libc",
  "uuid",
  "vmm-sys-util",
@@ -3746,18 +3764,16 @@ checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
 [[package]]
 name = "vfio-bindings"
 version = "0.6.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "188dac3057a0cbc94470085204c84b82ff7ec5dac629a514323cd133d1f9abe0"
+source = "git+https://github.com/RainaYL/vfio?branch=0.6.0-test#c8cef9eef0637f21392faf0726f3afe162cbbf91"
 
 [[package]]
 name = "vfio-ioctls"
-version = "0.6.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4e5ea6ba374c4ca77ee8cde0b927a40083dd2388dc0fb464fed6fef62edc3566"
+version = "0.6.0"
+source = "git+https://github.com/RainaYL/vfio?branch=0.6.0-test#c8cef9eef0637f21392faf0726f3afe162cbbf91"
 dependencies = [
  "byteorder",
- "kvm-bindings",
- "kvm-ioctls",
+ "kvm-bindings 0.14.1",
+ "kvm-ioctls 0.25.0",
  "libc",
  "log",
  "thiserror 2.0.18",
