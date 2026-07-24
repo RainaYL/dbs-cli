@@ -17,8 +17,8 @@ use vmm_sys_util::eventfd::EventFd;
 
 use dragonball::{
     api::v1::{
-        BlockDeviceConfigInfo, BootSourceConfig, ConfidentialVmType, InstanceInfo, NetworkInterfaceConfig, VmmRequest,
-        VmmResponse, VsockDeviceConfigInfo,
+        BlockDeviceConfigInfo, BootSourceConfig, ConfidentialVmType, InstanceInfo,
+        NetworkInterfaceConfig, VmmRequest, VmmResponse, VsockDeviceConfigInfo,
     },
     device_manager::{
         fs_dev_mgr::FsDeviceConfigInfo,
@@ -120,7 +120,9 @@ impl CliInstance {
             kernel_path: args.kernel_path.unwrap(),
             initrd_path: args.initrd_path.clone(),
             boot_args: Some(args.boot_args.clone()),
-            firmware_path: Some(String::from("/home/xiaofan/src/test_resources/tdshim-largepayload.bin")),
+            firmware_path: Some(String::from(
+                "/home/xiaofan/src/test_resources/tdshim-largepayload.bin",
+            )),
             // firmware_path: None,
         };
 
@@ -132,6 +134,7 @@ impl CliInstance {
             path_on_host: PathBuf::from(&args.rootfs_args.rootfs.unwrap()),
             is_root_device: args.rootfs_args.is_root,
             is_read_only: args.rootfs_args.is_read_only,
+            use_generic_irq: Some(false),
             ..block_device_config_info
         };
 
