@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-dragonball = { git = "https://github.com/RainaYL/kata-containers", branch = "rainax/quote_test", features = [
+dragonball = { git = "https://github.com/RainaYL/kata-containers", branch = "rainax/restruct_intr_pr", features = [
     "virtio-blk",
     "virtio-fs",
     "virtio-vsock",
@@ -26,7 +26,7 @@ log = "0.4.29"
 kvm-bindings = "0.14.0"
 kvm-ioctls = "0.24.0"
 thiserror = "1"
-nix = "0.31.2"
+nix = "0.31.3"
 anyhow = "1.0.102"
 vmm-sys-util = "0.15.0"
 slog = "2.8.2"
