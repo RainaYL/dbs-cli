@@ -3,6 +3,15 @@
 version = 4
 
 [[package]]
+name = "acpi_tables"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ce821f856a3eb1d033287f2dcfcdf94276d7895dd5bdd8ca45ae17e7d33d4dd9"
+dependencies = [
+ "zerocopy",
+]
+
+[[package]]
 name = "adler2"
 version = "2.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -134,12 +143,6 @@ checksum = "c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8"
 
 [[package]]
 name = "base64"
-version = "0.13.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9e1b586273c5702936fe7b7d6896644d8be71e6314cfe09d3167c95f712589e8"
-
-[[package]]
-name = "base64"
 version = "0.21.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9d297deb1925b89f2ccc13d7635fa0714f12c87adce1c75356b39ca9b7178567"
@@ -228,6 +231,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71"
 dependencies = [
  "generic-array",
+]
+
+[[package]]
+name = "block-buffer"
+version = "0.12.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d2f6c7dbe95a6ed67ad9f18e57daf93a2f034c524b99fd2b76d18fdfeb6660aa"
+dependencies = [
+ "hybrid-array",
 ]
 
 [[package]]
@@ -419,6 +431,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1d07550c9036bf2ae0c684c4297d503f838287c83c53686d05370d0e139ae570"
 
 [[package]]
+name = "const-oid"
+version = "0.10.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a6ef517f0926dd24a1582492c791b6a4818a4d94e789a334894aa15b0d12f55c"
+
+[[package]]
 name = "const_format"
 version = "0.2.35"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -538,6 +556,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "crypto-common"
+version = "0.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ce6e4c961d6cd6c9a86db418387425e8bdeaf05b3c8bc1411e6dca4c252f1453"
+dependencies = [
+ "hybrid-array",
+]
+
+[[package]]
 name = "darling"
 version = "0.20.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -608,7 +635,7 @@ dependencies = [
 [[package]]
 name = "dbs-acpi"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
  "vm-memory",
 ]
@@ -616,13 +643,13 @@ dependencies = [
 [[package]]
 name = "dbs-address-space"
 version = "0.3.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
  "arc-swap",
  "lazy_static",
  "libc",
- "nix 0.23.2",
- "thiserror 1.0.69",
+ "nix 0.31.3",
+ "thiserror 2.0.18",
  "vm-memory",
  "vmm-sys-util",
 ]
@@ -630,21 +657,21 @@ dependencies = [
 [[package]]
 name = "dbs-allocator"
 version = "0.1.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
- "thiserror 1.0.69",
+ "thiserror 2.0.18",
 ]
 
 [[package]]
 name = "dbs-arch"
 version = "0.2.3"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
- "kvm-bindings 0.14.1",
- "kvm-ioctls 0.25.0",
+ "kvm-bindings",
+ "kvm-ioctls",
  "libc",
  "memoffset 0.6.5",
- "thiserror 1.0.69",
+ "thiserror 2.0.18",
  "vm-memory",
  "vmm-sys-util",
 ]
@@ -652,14 +679,14 @@ dependencies = [
 [[package]]
 name = "dbs-boot"
 version = "0.4.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
  "dbs-arch",
- "kvm-bindings 0.14.1",
- "kvm-ioctls 0.25.0",
+ "kvm-bindings",
+ "kvm-ioctls",
  "lazy_static",
  "libc",
- "thiserror 1.0.69",
+ "thiserror 2.0.18",
  "vm-fdt",
  "vm-memory",
 ]
@@ -672,8 +699,8 @@ dependencies = [
  "clap",
  "crossbeam-channel",
  "dragonball",
- "kvm-bindings 0.14.0",
- "kvm-ioctls 0.24.0",
+ "kvm-bindings",
+ "kvm-ioctls",
  "libc",
  "log",
  "nix 0.31.3",
@@ -693,35 +720,33 @@ dependencies = [
 [[package]]
 name = "dbs-device"
 version = "0.2.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
- "thiserror 1.0.69",
+ "thiserror 2.0.18",
 ]
 
 [[package]]
 name = "dbs-interrupt"
 version = "0.2.2"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
  "bilge",
  "dbs-arch",
  "dbs-device",
- "kvm-bindings 0.14.1",
- "kvm-ioctls 0.25.0",
+ "kvm-bindings",
+ "kvm-ioctls",
  "libc",
- "log",
  "vmm-sys-util",
 ]
 
 [[package]]
 name = "dbs-legacy-devices"
 version = "0.1.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
  "dbs-device",
  "dbs-interrupt",
  "dbs-utils",
- "kvm-ioctls 0.25.0",
  "libc",
  "log",
  "serde",
@@ -732,7 +757,7 @@ dependencies = [
 [[package]]
 name = "dbs-pci"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
  "byteorder",
  "dbs-address-space",
@@ -742,12 +767,12 @@ dependencies = [
  "dbs-interrupt",
  "dbs-utils",
  "dbs-virtio-devices",
- "kvm-bindings 0.14.1",
- "kvm-ioctls 0.25.0",
+ "kvm-bindings",
+ "kvm-ioctls",
  "libc",
  "log",
  "serde",
- "thiserror 1.0.69",
+ "thiserror 2.0.18",
  "vfio-bindings",
  "vfio-ioctls",
  "virtio-queue",
@@ -757,39 +782,34 @@ dependencies = [
 [[package]]
 name = "dbs-upcall"
 version = "0.3.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
  "dbs-utils",
  "dbs-virtio-devices",
  "log",
- "thiserror 1.0.69",
+ "thiserror 2.0.18",
  "timerfd",
 ]
 
 [[package]]
 name = "dbs-utils"
 version = "0.2.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
  "anyhow",
  "event-manager",
- "kvm-bindings 0.14.1",
- "kvm-ioctls 0.25.0",
  "libc",
  "log",
  "serde",
- "tdx",
- "thiserror 1.0.69",
- "threadpool",
+ "thiserror 2.0.18",
  "timerfd",
- "vm-memory",
  "vmm-sys-util",
 ]
 
 [[package]]
 name = "dbs-virtio-devices"
 version = "0.3.1"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
  "byteorder",
  "caps",
@@ -802,11 +822,11 @@ dependencies = [
  "fuse-backend-rs",
  "io-uring",
  "kata-sys-util",
- "kvm-bindings 0.14.1",
- "kvm-ioctls 0.25.0",
+ "kvm-bindings",
+ "kvm-ioctls",
  "libc",
  "log",
- "nix 0.24.3",
+ "nix 0.31.3",
  "nydus-api",
  "nydus-rafs",
  "nydus-storage",
@@ -814,7 +834,7 @@ dependencies = [
  "sendfd",
  "serde",
  "serde_json",
- "thiserror 1.0.69",
+ "thiserror 2.0.18",
  "threadpool",
  "timerfd",
  "vhost",
@@ -881,9 +901,30 @@ version = "0.10.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9ed9a281f7bc9b7576e61468ba615a66a5c8cfdff42420a70aa82701a3b1e292"
 dependencies = [
- "block-buffer",
- "crypto-common",
+ "block-buffer 0.10.4",
+ "crypto-common 0.1.7",
  "subtle",
+]
+
+[[package]]
+name = "digest"
+version = "0.11.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f1dd6dbb5841937940781866fa1281a1ff7bd3bf827091440879f9994983d5c2"
+dependencies = [
+ "block-buffer 0.12.1",
+ "const-oid",
+ "crypto-common 0.2.2",
+]
+
+[[package]]
+name = "dispatch2"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1e0e367e4e7da84520dedcac1901e4da967309406d1e51017ae1abfb97adbd38"
+dependencies = [
+ "bitflags 2.11.0",
+ "objc2",
 ]
 
 [[package]]
@@ -900,8 +941,9 @@ dependencies = [
 [[package]]
 name = "dragonball"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
+ "acpi_tables",
  "anyhow",
  "arc-swap",
  "bytes",
@@ -920,13 +962,13 @@ dependencies = [
  "dbs-virtio-devices",
  "derivative",
  "kata-sys-util",
- "kvm-bindings 0.14.1",
- "kvm-ioctls 0.25.0",
+ "kvm-bindings",
+ "kvm-ioctls",
  "lazy_static",
  "libc",
  "linux-loader",
  "log",
- "nix 0.24.3",
+ "nix 0.31.3",
  "procfs 0.12.0",
  "prometheus",
  "seccompiler",
@@ -936,8 +978,9 @@ dependencies = [
  "slog",
  "slog-scope",
  "tdx",
- "thiserror 1.0.69",
+ "thiserror 2.0.18",
  "tracing",
+ "uuid",
  "vfio-bindings",
  "vfio-ioctls",
  "virtio-queue",
@@ -1330,7 +1373,7 @@ version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6c49c37c09c17a53d937dfbb742eb3a961d65a994e6bcdcf37e7399d0cc8ab5e"
 dependencies = [
- "digest",
+ "digest 0.10.7",
 ]
 
 [[package]]
@@ -1377,6 +1420,15 @@ name = "httpdate"
 version = "1.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "df3b46402a9d5adb4c86a0cf463f42e19994e3ee891101b1841f30a545cb49a9"
+
+[[package]]
+name = "hybrid-array"
+version = "0.4.14"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "707114b52a152fa7bdb290cd7cd5912d9467273b6d74e21b8d81aca1f8533f6b"
+dependencies = [
+ "typenum",
+]
 
 [[package]]
 name = "hyper"
@@ -1469,7 +1521,7 @@ dependencies = [
  "js-sys",
  "log",
  "wasm-bindgen",
- "windows-core 0.62.2",
+ "windows-core",
 ]
 
 [[package]]
@@ -1694,7 +1746,7 @@ dependencies = [
 [[package]]
 name = "kata-sys-util"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
  "anyhow",
  "byteorder",
@@ -1703,9 +1755,8 @@ dependencies = [
  "kata-types",
  "lazy_static",
  "libc",
- "nix 0.26.4",
+ "nix 0.31.3",
  "oci-spec",
- "pci-ids",
  "rand 0.10.1",
  "runtime-spec",
  "serde",
@@ -1713,16 +1764,16 @@ dependencies = [
  "slog",
  "slog-scope",
  "subprocess",
- "thiserror 1.0.69",
+ "thiserror 2.0.18",
 ]
 
 [[package]]
 name = "kata-types"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
  "anyhow",
- "base64 0.13.1",
+ "base64 0.22.1",
  "bitmask-enum",
  "byte-unit",
  "crc",
@@ -1730,7 +1781,7 @@ dependencies = [
  "glob",
  "gpt",
  "lazy_static",
- "nix 0.26.4",
+ "nix 0.31.3",
  "num_cpus",
  "oci-spec",
  "regex",
@@ -1738,13 +1789,13 @@ dependencies = [
  "serde",
  "serde-enum-str",
  "serde_json",
- "sha2",
+ "sha2 0.11.0",
  "slog",
  "slog-scope",
  "sysctl",
  "sysinfo",
- "thiserror 1.0.69",
- "toml",
+ "thiserror 2.0.18",
+ "toml 1.1.3+spec-1.1.0",
 ]
 
 [[package]]
@@ -1757,32 +1808,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "kvm-bindings"
-version = "0.14.1"
-source = "git+https://github.com/RainaYL/kvm?branch=tdx-v2#c3a6de9342445fb42484bbba61b372d9089386d6"
-dependencies = [
- "vmm-sys-util",
-]
-
-[[package]]
 name = "kvm-ioctls"
 version = "0.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "333f77a20344a448f3f70664918135fddeb804e938f28a99d685bd92926e0b19"
 dependencies = [
  "bitflags 2.11.0",
- "kvm-bindings 0.14.0",
- "libc",
- "vmm-sys-util",
-]
-
-[[package]]
-name = "kvm-ioctls"
-version = "0.25.0"
-source = "git+https://github.com/RainaYL/kvm?branch=tdx-v2#c3a6de9342445fb42484bbba61b372d9089386d6"
-dependencies = [
- "bitflags 2.11.0",
- "kvm-bindings 0.14.1",
+ "kvm-bindings",
  "libc",
  "vmm-sys-util",
 ]
@@ -1908,9 +1940,9 @@ dependencies = [
 
 [[package]]
 name = "memoffset"
-version = "0.7.1"
+version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5de893c32cde5f383baa4c04c5d6dbdd735cfd4a794b0debdb2bb1b421da5ff4"
+checksum = "488016bfae457b036d996092f6cb448677611ce4449e970ceaf42695203f218a"
 dependencies = [
  "autocfg",
 ]
@@ -1920,12 +1952,6 @@ name = "mime"
 version = "0.3.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6877bb514081ee2a7ff5ef9de3281f14a4dd4bceac4c09388074a6b5df8a139a"
-
-[[package]]
-name = "minimal-lexical"
-version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "68354c5c6bd36d73ff3feceb05efa59b6acb7626617f4962be322a825e61f79a"
 
 [[package]]
 name = "miniz_oxide"
@@ -1988,19 +2014,6 @@ dependencies = [
 
 [[package]]
 name = "nix"
-version = "0.23.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8f3790c00a0150112de0f4cd161e3d7fc4b2d8a5542ffc35f099a2562aecb35c"
-dependencies = [
- "bitflags 1.3.2",
- "cc",
- "cfg-if",
- "libc",
- "memoffset 0.6.5",
-]
-
-[[package]]
-name = "nix"
 version = "0.24.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fa52e972a9a719cecb6864fb88568781eb706bac2cd1d4f04a648542dbf78069"
@@ -2013,19 +2026,6 @@ dependencies = [
 
 [[package]]
 name = "nix"
-version = "0.26.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "598beaf3cc6fdd9a5dfb1630c2800c7acd31df7aaf0f565796fba2b53ca1af1b"
-dependencies = [
- "bitflags 1.3.2",
- "cfg-if",
- "libc",
- "memoffset 0.7.1",
- "pin-utils",
-]
-
-[[package]]
-name = "nix"
 version = "0.31.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf20d2fde8ff38632c426f1165ed7436270b44f199fc55284c38276f9db47c3d"
@@ -2034,16 +2034,7 @@ dependencies = [
  "cfg-if",
  "cfg_aliases",
  "libc",
-]
-
-[[package]]
-name = "nom"
-version = "7.1.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d273983c5a657a70a3e8f2a01329822f3b8c8172b73826411a55751e404a0a4a"
-dependencies = [
- "memchr",
- "minimal-lexical",
+ "memoffset 0.9.1",
 ]
 
 [[package]]
@@ -2091,7 +2082,7 @@ dependencies = [
  "serde",
  "serde_json",
  "thiserror 1.0.69",
- "toml",
+ "toml 0.5.11",
 ]
 
 [[package]]
@@ -2167,10 +2158,19 @@ dependencies = [
  "openssl",
  "serde",
  "serde_json",
- "sha2",
+ "sha2 0.10.9",
  "thiserror 1.0.69",
  "tokio",
  "zstd",
+]
+
+[[package]]
+name = "objc2"
+version = "0.6.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3a12a8ed07aefc768292f076dc3ac8c48f3781c8f2d5851dd3d98950e8c5a89f"
+dependencies = [
+ "objc2-encode",
 ]
 
 [[package]]
@@ -2180,13 +2180,52 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2a180dd8642fa45cdb7dd721cd4c11b1cadd4929ce112ebd8b9f5803cc79d536"
 dependencies = [
  "bitflags 2.11.0",
+ "dispatch2",
+ "objc2",
+]
+
+[[package]]
+name = "objc2-encode"
+version = "4.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ef25abbcd74fb2609453eb695bd2f860d389e457f67dc17cafc8b8cbc89d0c33"
+
+[[package]]
+name = "objc2-foundation"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e3e0adef53c21f888deb4fa59fc59f7eb17404926ee8a6f59f5df0fd7f9f3272"
+dependencies = [
+ "bitflags 2.11.0",
+ "objc2",
+]
+
+[[package]]
+name = "objc2-io-kit"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "33fafba39597d6dc1fb709123dfa8289d39406734be322956a69f0931c73bb15"
+dependencies = [
+ "libc",
+ "objc2-core-foundation",
+]
+
+[[package]]
+name = "objc2-open-directory"
+version = "0.3.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bb82bed227edf5201dfedf072bba4015a33d3d4a98519837295a90f0a23f676d"
+dependencies = [
+ "objc2",
+ "objc2-core-foundation",
+ "objc2-foundation",
 ]
 
 [[package]]
 name = "oci-spec"
-version = "0.8.4"
+version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fc3da52b83ce3258fbf29f66ac784b279453c2ac3c22c5805371b921ede0d308"
+checksum = "3df6f876ad774d6a676f7e968f5c3edacc32f90e65fe680a8b686235396556fb"
 dependencies = [
  "const_format",
  "derive_builder",
@@ -2289,61 +2328,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "pci-ids"
-version = "0.2.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "098762dc8ca11c831fee9544ae9f7eae8fc4666ec37e7b753f56d624c03d725e"
-dependencies = [
- "nom",
- "phf",
- "phf_codegen",
- "proc-macro2",
- "quote",
-]
-
-[[package]]
 name = "percent-encoding"
 version = "2.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9b4f627cb1b25917193a259e49bdad08f671f8d9708acfd5fe0a8c1455d87220"
-
-[[package]]
-name = "phf"
-version = "0.11.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1fd6780a80ae0c52cc120a26a1a42c1ae51b247a253e4e06113d23d2c2edd078"
-dependencies = [
- "phf_shared",
-]
-
-[[package]]
-name = "phf_codegen"
-version = "0.11.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "aef8048c789fa5e851558d709946d6d79a8ff88c0440c587967f8e94bfb1216a"
-dependencies = [
- "phf_generator",
- "phf_shared",
-]
-
-[[package]]
-name = "phf_generator"
-version = "0.11.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3c80231409c20246a13fddb31776fb942c38553c51e871f8cbd687a4cfb5843d"
-dependencies = [
- "phf_shared",
- "rand 0.8.5",
-]
-
-[[package]]
-name = "phf_shared"
-version = "0.11.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "67eabc2ef2a60eb7faa00097bd1ffdb5bd28e62bf39990626a582201b7a754e5"
-dependencies = [
- "siphasher",
-]
 
 [[package]]
 name = "pin-project-lite"
@@ -2794,7 +2782,7 @@ dependencies = [
 [[package]]
 name = "runtime-spec"
 version = "0.1.0"
-source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fquote_test#d1433da80ee825a2fd1130b8ce3f763c0e194386"
+source = "git+https://github.com/RainaYL/kata-containers?branch=rainax%2Fpci_tdx#865a34400fdee74ed56c2d978c7e3de157aa0b1c"
 dependencies = [
  "serde",
  "serde_derive",
@@ -3051,6 +3039,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "serde_spanned"
+version = "1.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6662b5879511e06e8999a8a235d848113e942c9124f211511b16466ee2995f26"
+dependencies = [
+ "serde_core",
+]
+
+[[package]]
 name = "serde_urlencoded"
 version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3070,7 +3067,7 @@ checksum = "e3bf829a2d51ab4a5ddf1352d8470c140cadc8301b2ae1789db023f01cedd6ba"
 dependencies = [
  "cfg-if",
  "cpufeatures 0.2.17",
- "digest",
+ "digest 0.10.7",
 ]
 
 [[package]]
@@ -3081,7 +3078,18 @@ checksum = "a7507d819769d01a365ab707794a4084392c824f54a7a6a7862f8c3d0892b283"
 dependencies = [
  "cfg-if",
  "cpufeatures 0.2.17",
- "digest",
+ "digest 0.10.7",
+]
+
+[[package]]
+name = "sha2"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "446ba717509524cb3f22f17ecc096f10f4822d76ab5c0b9822c5f9c284e825f4"
+dependencies = [
+ "cfg-if",
+ "cpufeatures 0.3.0",
+ "digest 0.11.3",
 ]
 
 [[package]]
@@ -3107,12 +3115,6 @@ name = "simple-bytes"
 version = "0.2.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c11532d9d241904f095185f35dcdaf930b1427a94d5b01d7002d74ba19b44cc4"
-
-[[package]]
-name = "siphasher"
-version = "1.0.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8ee5873ec9cce0195efcb7a4e9507a04cd49aec9c83d0389df45b1ef7ba2e649"
 
 [[package]]
 name = "slab"
@@ -3228,9 +3230,9 @@ dependencies = [
 
 [[package]]
 name = "subprocess"
-version = "0.2.15"
+version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2c56e8662b206b9892d7a5a3f2ecdbcb455d3d6b259111373b7e08b8055158a8"
+checksum = "d5c2982c58b661c6509861bd3383870b6918030606e8b5afb0ade14b4a3cff12"
 dependencies = [
  "libc",
  "winapi",
@@ -3300,14 +3302,16 @@ dependencies = [
 
 [[package]]
 name = "sysinfo"
-version = "0.34.2"
+version = "0.39.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a4b93974b3d3aeaa036504b8eefd4c039dced109171c1ae973f1dc63b2c7e4b2"
+checksum = "d2071df9448915b71c4fe6d25deaf1c22f12bd234f01540b77312bb8e41361e6"
 dependencies = [
  "libc",
  "memchr",
  "ntapi",
  "objc2-core-foundation",
+ "objc2-io-kit",
+ "objc2-open-directory",
  "windows",
 ]
 
@@ -3352,12 +3356,13 @@ dependencies = [
 [[package]]
 name = "tdx"
 version = "0.1.1"
-source = "git+https://github.com/RainaYL/tdx#133b26599c7a6b43eb30d07785e97ad78b4007eb"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "83943e37cf46979f711ad11489c641fa058fd0fae92c122d1fc26a664e82acab"
 dependencies = [
  "bitflags 2.11.0",
  "iocuddle",
- "kvm-bindings 0.14.1",
- "kvm-ioctls 0.25.0",
+ "kvm-bindings",
+ "kvm-ioctls",
  "libc",
  "uuid",
  "vmm-sys-util",
@@ -3577,6 +3582,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "toml"
+version = "1.1.3+spec-1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "53c96ecdfa941c8fc4fcaed14f99ada8ebed502eef533015095a07e3301d4c3c"
+dependencies = [
+ "indexmap",
+ "serde_core",
+ "serde_spanned",
+ "toml_datetime",
+ "toml_parser",
+ "toml_writer",
+ "winnow",
+]
+
+[[package]]
 name = "toml_datetime"
 version = "1.1.1+spec-1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3605,6 +3625,12 @@ checksum = "a2abe9b86193656635d2411dc43050282ca48aa31c2451210f4202550afb7526"
 dependencies = [
  "winnow",
 ]
+
+[[package]]
+name = "toml_writer"
+version = "1.1.2+spec-1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7d56353a2a665ad0f41a421187180aab746c8c325620617ad883a99a1cbe66d2"
 
 [[package]]
 name = "tower"
@@ -3769,16 +3795,18 @@ checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
 [[package]]
 name = "vfio-bindings"
 version = "0.6.2"
-source = "git+https://github.com/RainaYL/vfio?branch=0.6.0-test#c8cef9eef0637f21392faf0726f3afe162cbbf91"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "188dac3057a0cbc94470085204c84b82ff7ec5dac629a514323cd133d1f9abe0"
 
 [[package]]
 name = "vfio-ioctls"
-version = "0.6.0"
-source = "git+https://github.com/RainaYL/vfio?branch=0.6.0-test#c8cef9eef0637f21392faf0726f3afe162cbbf91"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4e5ea6ba374c4ca77ee8cde0b927a40083dd2388dc0fb464fed6fef62edc3566"
 dependencies = [
  "byteorder",
- "kvm-bindings 0.14.1",
- "kvm-ioctls 0.25.0",
+ "kvm-bindings",
+ "kvm-ioctls",
  "libc",
  "log",
  "thiserror 2.0.18",
@@ -4032,24 +4060,23 @@ checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
 
 [[package]]
 name = "windows"
-version = "0.57.0"
+version = "0.62.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "12342cb4d8e3b046f3d80effd474a7a02447231330ef77d71daa6fbc40681143"
+checksum = "527fadee13e0c05939a6a05d5bd6eec6cd2e3dbd648b9f8e447c6518133d8580"
 dependencies = [
- "windows-core 0.57.0",
- "windows-targets 0.52.6",
+ "windows-collections",
+ "windows-core",
+ "windows-future",
+ "windows-numerics",
 ]
 
 [[package]]
-name = "windows-core"
-version = "0.57.0"
+name = "windows-collections"
+version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d2ed2439a290666cd67ecce2b0ffaad89c2a56b976b736e6ece670297897832d"
+checksum = "23b2d95af1a8a14a3c7367e1ed4fc9c20e0a26e79551b1454d72583c97cc6610"
 dependencies = [
- "windows-implement 0.57.0",
- "windows-interface 0.57.0",
- "windows-result 0.1.2",
- "windows-targets 0.52.6",
+ "windows-core",
 ]
 
 [[package]]
@@ -4058,22 +4085,22 @@ version = "0.62.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b8e83a14d34d0623b51dce9581199302a221863196a1dde71a7663a4c2be9deb"
 dependencies = [
- "windows-implement 0.60.2",
- "windows-interface 0.59.3",
+ "windows-implement",
+ "windows-interface",
  "windows-link",
- "windows-result 0.4.1",
+ "windows-result",
  "windows-strings",
 ]
 
 [[package]]
-name = "windows-implement"
-version = "0.57.0"
+name = "windows-future"
+version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9107ddc059d5b6fbfbffdfa7a7fe3e22a226def0b2608f72e9d552763d3e1ad7"
+checksum = "e1d6f90251fe18a279739e78025bd6ddc52a7e22f921070ccdc67dde84c605cb"
 dependencies = [
- "proc-macro2",
- "quote",
- "syn 2.0.117",
+ "windows-core",
+ "windows-link",
+ "windows-threading",
 ]
 
 [[package]]
@@ -4081,17 +4108,6 @@ name = "windows-implement"
 version = "0.60.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "053e2e040ab57b9dc951b72c264860db7eb3b0200ba345b4e4c3b14f67855ddf"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 2.0.117",
-]
-
-[[package]]
-name = "windows-interface"
-version = "0.57.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "29bee4b38ea3cde66011baa44dba677c432a78593e202392d1e9070cf2a7fca7"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4116,23 +4132,24 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f0805222e57f7521d6a62e36fa9163bc891acd422f971defe97d64e70d0a4fe5"
 
 [[package]]
+name = "windows-numerics"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6e2e40844ac143cdb44aead537bbf727de9b044e107a0f1220392177d15b0f26"
+dependencies = [
+ "windows-core",
+ "windows-link",
+]
+
+[[package]]
 name = "windows-registry"
 version = "0.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "02752bf7fbdcce7f2a27a742f798510f3e5ad88dbe84871e5168e2120c3d5720"
 dependencies = [
  "windows-link",
- "windows-result 0.4.1",
+ "windows-result",
  "windows-strings",
-]
-
-[[package]]
-name = "windows-result"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5e383302e8ec8515204254685643de10811af0ed97ea37210dc26fb0032647f8"
-dependencies = [
- "windows-targets 0.52.6",
 ]
 
 [[package]]
@@ -4218,6 +4235,15 @@ dependencies = [
  "windows_x86_64_gnu 0.52.6",
  "windows_x86_64_gnullvm 0.52.6",
  "windows_x86_64_msvc 0.52.6",
+]
+
+[[package]]
+name = "windows-threading"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3949bd5b99cafdf1c7ca86b43ca564028dfe27d66958f2470940f73d86d75b37"
+dependencies = [
+ "windows-link",
 ]
 
 [[package]]
